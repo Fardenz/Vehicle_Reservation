@@ -1,0 +1,60 @@
+A01 Audi Q2
+0
+A02 Audi A5
+0
+A03 Audi A4
+0
+B01 BMW Serie 3
+0
+B02 BMW X3
+0
+B03 BMW X1
+0
+F01 Ferrari California T
+2
+1 VET
+2 RAI
+F02 Ferrari F12 Berlinetta
+2
+1 SAI
+2 KVY
+F03 Ferrari 488 GTB
+2
+1 GRO
+2 GUT
+F11 Ford Focus
+0
+F12 Ford Kuga
+0
+F13 Ford Mondeo
+0
+H01 Honda CR-V
+0
+H02 Honda Civic
+2
+1 ALO
+2 BUT
+H03 Honda Jazz
+0
+M01 Mercedes Clase C
+2
+1 ROS
+2 HAM
+M02 Mercedes Clase E
+2
+1 PER
+2 HUL
+M03 Mercedes Clase B
+2
+1 BOT
+2 MAS
+R01 Renault Megane
+2
+1 RIC
+2 VER
+R02 Renault Clio
+2
+1 MAG
+2 PAL
+R03 Renault Captur
+0
