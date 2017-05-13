@@ -32,10 +32,14 @@ while (!exit){
         JOptionPane.showMessageDialog(null,toPrint);
 		break;
 	case 2:
+	    String toPrint2="";
 		for(int i=1; i<vehicles.numero();i++){
-			JOptionPane.showMessageDialog(null,"Marca: "+vehicles.get(i).getMarca()+" Modelo: "+vehicles.get(i).getModelo()+" Matricula: "+vehicles.get(i).getMatricula());}
+			toPrint2+="Marca: "+vehicles.get(i).getMarca()+" Modelo: "+vehicles.get(i).getModelo()+" Matricula: "+vehicles.get(i).getMatricula()+"\n";
+		}
+        JOptionPane.showMessageDialog(null,toPrint2);
 
-		break;
+
+        break;
 	case 3:
 	    boolean noExit=true;
         while(noExit){
