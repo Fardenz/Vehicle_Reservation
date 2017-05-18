@@ -2,6 +2,7 @@ package prg;
 
 import jdk.nashorn.internal.scripts.JO;
 
+import java.awt.*;
 import java.util.Scanner;
 
 import javax.swing.*;
@@ -42,10 +43,12 @@ while (!exit){
         break;
 	case 3:
 	    boolean noExit=true;
-        while(noExit){
+        while(noExit) {
             //JOptionPane.showInputDialog("1 Todas las reservas 2 Reservas de usuarios 3 Reservas de un vehiculo 4 Reservar 5 Cancelar 0 Salir");
-            noExit=menuReservas(vehicles);
+            noExit = menuReservas(vehicles);
         }
+    case 4:exit=true;
+            break;
 
         }
 		}}
@@ -62,18 +65,26 @@ while (!exit){
 
             case 1:
                 //for recorriendo todos los coches
-
+                String toPrint="";
                 for (int j = 0; j < vehicles.numero(); j++) {
                     //comprobamos si el coche en el que estamos tiene reservas
                     //System.out.println(j+" "+vehicles.numero()+" "+vehicles.get(j).getReservas());
+
                     if (vehicles.get(j).getReservas() > 0) {
                         for (int i = 0; i < 31; i++) {
                             if (!vehicles.get(j).checkDay(i).isDummie())
-                               JOptionPane.showMessageDialog(null,vehicles.get(j).getMarca() + " " + vehicles.get(j).getModelo() + "\n------------------------------\n User: " + vehicles.get(j).checkDay(i).getNombre() + "\n Code: " + vehicles.get(j).checkDay(i).getCodigo() + "\n Day: " + (i + 1) + "\n------------------------------");
+                                toPrint+=" "+vehicles.get(j).getMarca() + " " + vehicles.get(j).getModelo() + "\n------------------------------\n User: " + vehicles.get(j).checkDay(i).getNombre() + "\n Code: " + vehicles.get(j).checkDay(i).getCodigo() + "\n Day: " + (i + 1)+"\n\n" ;
                         }
                     }
                     //System.out.println("Marca: "+vehicles.get(j).getMarca()+" Modelo: "+vehicles.get(j).getModelo()+" Matricula: "+vehicles.get(j).getMatricula()+"\nDia:"+"Codigo de usuarios: ");}
                 }
+                JTextArea textArea = new JTextArea(toPrint);
+                JScrollPane scrollPane = new JScrollPane(textArea);
+                //textArea.setLineWrap(true);
+                //textArea.setWrapStyleWord(true);
+               scrollPane.setPreferredSize(new Dimension(500,500));
+                JOptionPane.showMessageDialog(null, scrollPane, "dialog test with textarea",
+                        JOptionPane.YES_NO_OPTION);
                 return true;
             case 2:
                 //Tengo un codigo y busco reservas del usuario de todos los coches y dias
